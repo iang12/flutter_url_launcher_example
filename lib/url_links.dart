@@ -45,14 +45,26 @@ class UrlLinks {
   }
 
   static void abrirMessenger() async {
-    var messengerUrl = 'http://m.me/ianwandersom';
+    var messengerUrl = 'https://m.me/ianwandersom';
+    if (await canLaunchUrl(Uri.parse(messengerUrl))) {
+      await launchUrl(
+        Uri.parse(messengerUrl),
+        mode: LaunchMode.externalApplication,
+      );
+    } else {
+      throw 'Could not launch $messengerUrl';
+    }
+  }
+
+  static void abrirInstagram() async {
+    var messengerUrl = 'https://instagram.com/ianoliveira.dev';
     if (await canLaunchUrl(Uri.parse(messengerUrl))) {
       await launchUrl(Uri.parse(messengerUrl));
     } else {
       throw 'Could not launch $messengerUrl';
     }
   }
-
+  
   static void abrirContatos() async {
     const url = 'content://com.android.contacts/contacts';
     if (await canLaunchUrl(Uri.parse(url))) {

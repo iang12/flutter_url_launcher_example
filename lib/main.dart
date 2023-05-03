@@ -96,6 +96,16 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
             ),
             ElevatedButton(
+              onPressed: UrlLinks.abrirInstagram,
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all(Colors.brown),
+              ),
+              child: const Text(
+                'Abrir o Instagram',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+            ElevatedButton(
               onPressed: UrlLinks.abrirContatos,
               style: ButtonStyle(
                 backgroundColor: MaterialStateProperty.all(Colors.purpleAccent),
